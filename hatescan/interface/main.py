@@ -4,7 +4,6 @@ from hatescan.ml_logic.data import clean_data
 from hatescan.ml_logic.preprocessor import preprocessing, tokenizer
 from hatescan.ml_logic.model import initialize_model, compile_model, train_model
 
-
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.utils import to_categorical
 
@@ -35,10 +34,7 @@ X_test_pad = pad_sequences(X_test_token, dtype='float32', padding='post')
 embedding_dimension = 100
 
 #initiate model
-model = initialize_model(vocab_size, embedding_dimension)
-
-#compile model
-model = compile_model(model=model, learning_rate=0.01)
+model = initialize_model(vocab_size, embedding_dimension, learning_rate=0.01)
 
 #train model
 history, model = train_model(model=model,
@@ -48,7 +44,6 @@ history, model = train_model(model=model,
         patience=2,
         validation_split=0.2)
 
-
 #predict y
 y_pred = model.predict(X_test_pad)
 y_pred_classes = np.argmax(y_pred, axis=1)
@@ -56,3 +51,15 @@ y_test_classes = np.argmax(y_test, axis=1)
 
 #print classification report to check how often the most dangerous class was predict correctly
 report = classification_report(y_test_classes, y_pred_classes, target_names=['Class 0', 'Class 1', 'Class 2'])
+
+
+#calling roberta's model (from HuggingFace)
+from hatescan.ml_logic.model import query, return_class
+
+API_TOKEN = "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" #Mauro's token
+API_URL = "https://api-inference.huggingface.co/models/mrm8488/distilroberta-finetuned-tweets-hate-speech"
+headers = {"Authorization": f"Bearer {API_TOKEN}"}
+output = query({
+	"inputs": "i hate you all and wish you were dead"
+ })
+result = return_class(output)
