@@ -34,4 +34,6 @@ run_GCR_deploy:
 	gcloud run deploy --image ${GCR_REGION}/${GCP_PROJECT}/${GCR_IMAGE}:prod --memory ${GCR_MEMORY} --region ${GCP_REGION} --env-vars-file .env.yaml
 
 run_GCR_all:
-	run_GCR_build run_GCR_push run_GCR_deploy
+	docker build --platform linux/amd64 -t ${GCR_REGION}/${GCP_PROJECT}/${GCR_IMAGE}:prod .
+	docker push ${GCR_REGION}/${GCP_PROJECT}/${GCR_IMAGE}:prod
+	gcloud run deploy --image ${GCR_REGION}/${GCP_PROJECT}/${GCR_IMAGE}:prod --memory ${GCR_MEMORY} --region ${GCP_REGION} --env-vars-file .env.yaml

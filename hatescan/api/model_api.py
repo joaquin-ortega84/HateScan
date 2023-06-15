@@ -61,7 +61,7 @@ def predict(
     
     #Pred Model Scale
     y_pred_scale = model_scale.predict(X_pred_pad_scale)
-    pred_scale = {'HateLabel': (np.argmax(y_pred_scale))}
+    pred_scale = {'HateLabel': float(np.argmax(y_pred_scale))}
 
     #Pred Model Topic
     y_pred_topics = model_topic.predict(X_pred_pad_topic)
