@@ -67,6 +67,6 @@ else:
 
 # Display the layout
 # st.image(logo_path, use_column_width=True)
-st.markdown("<h2>Welcome to HateScan!</h2>", unsafe_allow_html=True)
+st.markdown("<h2>Welcome!</h2>", unsafe_allow_html=True)
 st.markdown("<p>HateScan offers you the ability to analyze language usage from real Twitter accounts, including those of your friends, celebrities, and public figures. Gain a deeper understanding of speech patterns and explore prevalent topics by comparing tweets, accounts, and global scores.</p>", unsafe_allow_html=True)
 st.markdown("<p>To get started, simply click on the navigation icon located on your left.</p>", unsafe_allow_html=True)
