@@ -1,5 +1,8 @@
 # HateScan
 
+<img width="657" alt="Screenshot 2024-02-29 at 15 07 48" src="https://github.com/joaquin-ortega84/HateScan/assets/104449577/3ff8f7d9-1e05-4cc4-a4ca-2dcedfae33bd">
+
+
 This project was built by Elina Emsems, Joaquin Ortega and Santiago Rodriguez as the final deliverable in Le Wagons #1237 Data Science Batch.
 
 HateScan offers you the ability to analyze hate speech usage from real Twitter accounts, including those of celebrities, and public figures. Gain a deeper understanding of speech patterns and explore prevalent topics by comparing tweets, accounts, and global scores.
