@@ -15,7 +15,8 @@ HateScan is a web app powered by AI to make classifications of speech in Twitter
    - Offensive
    - Hateful
      
-3. Classify what the tweet & account topic of the narrative is about:
+3. Classify what the topic of the tweet is regarding:
+4. is about:
     - Gender
     - Religion
     - Race
@@ -39,7 +40,7 @@ Analyze any account by inputing Twitter handle and number of tweets wished to an
 ### 3. Global Scan
 All the accounts analyzed are stored in a Google Cloud's database: BigQuery. We are able to compare all accounts of public figures, politians, artists, world leading figures, athletes. And visualize patterns of speech, through Principal Component Analysis (PCA) and plotting. 
 
-<img width="400" alt="Screenshot 2024-02-29 at 15 37 32" src="https://github.com/joaquin-ortega84/HateScan/assets/104449577/6acb4c29-f341-4fd2-a182-b4be04376877">
+<img width="600" alt="Screenshot 2024-02-29 at 15 37 32" src="https://github.com/joaquin-ortega84/HateScan/assets/104449577/6acb4c29-f341-4fd2-a182-b4be04376877">
 
 Each account is a data point in the graph. The size of the circles represents the number of followers of each profile. The color of the circles represents the hate label assigned by HateScan. Therefore we can see which accounts are most influential based on their following base.
 
